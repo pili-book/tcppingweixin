@@ -2,7 +2,7 @@
 wx(){
 #将下面的webhook地址替换成你的企业微信机器人地址，$1为告警消息 $2为@人的手机号 $2可以为空
 cat > $0.msg << EOF
-curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d25d7339-9b15-4b17-80ae-2f546140c349' \
+curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=345d4ed0-262e-4602-9836-79d58cb2c397' \
    -H 'Content-Type: application/json' \
    -d '
    {
@@ -22,6 +22,6 @@ result=$(echo $a | grep "${c}")
 if [ "$result" != "" ]; then
 echo "包含"
 else
-echo "不包含"
+wx "这是一条告警信息" "18888888888"
 fi
 
