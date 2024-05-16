@@ -3,4 +3,4 @@ b=$(tcping -x 2 192.168.2.1 81)
 if [[ "$a" != *"open"* ]]; then
   echo "变量中不包含字符串open"
 fi
-echo $b
+
