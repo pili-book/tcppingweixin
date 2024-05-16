@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/
  
  
 if tcping -x 5 mailla.eu.org  &>/dev/null; then
