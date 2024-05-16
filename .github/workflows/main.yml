@@ -20,10 +20,10 @@ jobs:
     - name: Ping IP
       run: |
         sudo apt-get install -y tcptraceroute bc
-        sudo wget  https://github.com/pili-book/tcppingweixin/blob/master/tcping
+        sudo wget https://github.com/pouriyajamshidi/tcping/releases/latest/download/tcping_amd64.deb -O /tmp/tcping.deb
+        sudo apt install -y /tmp/tcping.deb
         
-        sudo chmod +x tcping
-        sudo mv tcping /usr/local/bin/tcping
-        tcping -6 -x 5  mailla.eu.org 81
+        
+        tcping -6 -c 5  mailla.eu.org 81
     
     
