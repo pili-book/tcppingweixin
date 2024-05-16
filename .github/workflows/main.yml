@@ -1,0 +1,29 @@
+name: Ping Web Site
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+  schedule: 
+    - cron: 35 21 * * * 
+jobs:
+  ping:
+
+    runs-on: ubuntu-latest
+    permissions:
+      
+      contents: read
+      packages: write
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Ping IP
+      run: |
+        sudo apt-get install -y tcptraceroute bc
+        sudo wget  https://github.com/pili-book/tcptraceroute-ping/blob/master/TCP-PING.1
+        
+        sudo chmod +x tcping
+        
+        tcping -x 5  mailla.eu.org 81
+    
+    
