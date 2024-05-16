@@ -24,6 +24,6 @@ jobs:
         
         sudo chmod +x tcping
         sudo mv tcping /usr/local/bin/tcping
-        tcping -x 5  mailla.eu.org 81
+        tcping -6 -x 5  mailla.eu.org 81
     
     
