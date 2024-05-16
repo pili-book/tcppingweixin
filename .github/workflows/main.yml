@@ -24,6 +24,6 @@ jobs:
         sudo apt install -y /tmp/tcping.deb
         
         
-        tcping -6 -c 5  mailla.eu.org 81
+        tcping  -c 5  mailla.eu.org 81
     
     
