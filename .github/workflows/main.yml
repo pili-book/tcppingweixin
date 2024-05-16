@@ -5,7 +5,7 @@ on:
     branches: [ master ]
   workflow_dispatch:
   schedule: 
-    - cron: 35 21 * * * 
+    - cron: 0 */1 * * * 
 jobs:
   ping:
 
