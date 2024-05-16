@@ -4,6 +4,6 @@ c="open"
 result=$(echo $a | grep "${c}")
 if [ 1==2 ]; then
     echo "包含"
-else
+ else
     echo "不包含"
 fi
