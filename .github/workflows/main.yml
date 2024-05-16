@@ -20,7 +20,7 @@ jobs:
     - name: Ping IP
       run: |
         sudo apt-get install -y tcptraceroute bc
-        sudo wget  https://github.com/pili-book/tcptraceroute-ping/blob/master/TCP-PING.1
+        sudo wget  https://github.com/pili-book/tcppingweixin/blob/master/tcping
         
         sudo chmod +x tcping
         
