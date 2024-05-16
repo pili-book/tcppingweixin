@@ -25,6 +25,10 @@ jobs:
         sudo chmod +x tcping
         sudo mv tcping /usr/local/bin/tcping
         tcping  -x 5  mailla.eu.org 81
+    - name: Ping IP
+      run: |
+        chmod +x ceshi.sh
+        ./ceshi.sh
         
         
         
