@@ -22,7 +22,7 @@ result=$(echo $a | grep "${c}")
 if [ "$result" != "" ]; then
 echo "包含"
 else
-sleep 180
+sleep 600
 d=$(tcping -x 5 mailla.eu.org 81)
 result=$(echo $d | grep "${c}")
  if [ "$result" != "" ]; then
