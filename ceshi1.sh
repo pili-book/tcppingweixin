@@ -22,21 +22,13 @@
 # NOTE: for now it's for only IXP4xx in big endian mode
 
 # list of supported boards, in "boardname machtypeid" format
-for board in "avila 526" "gateway7001 731" "nslu2 597" "nas100d 865" "wg302v1 889" "wg302v2 890" "pronghorn 928" "pronghornmetro 1040" "compex 1273" "wrt300nv2 1077" "loft 849" "dsmg600 964" "fsg3 1091" "ap1000 1543" "tw2662 1658" "tw5334 1664" "ixdpg425 604" "cambria 1468" "sidewinder 1041" "ap42x 4418"
-do
-  set -- $board
-  hexid=$(printf %x\\n $2)
-  if [ "$2" -lt "256" ]; then
-    # we have a low machtypeid, we just need a "mov" (e3a)
-    printf "\xe3\xa0\x10\x$hexid" > $BIN_DIR/$IMG_PREFIX-$1-zImage
-  else
-    # we have a high machtypeid, we need a "mov" (e3a) and an "orr" (e38)
-    if [ "$2" -lt "4096" ]; then
-      printf "\xe3\xa0\x10\x$(echo $hexid|cut -b "2 3")\xe3\x81\x1c\x$(echo $hexid|cut -b 1)" > $BIN_DIR/$IMG_PREFIX-$1-zImage
-    else
-      printf "\xe3\xa0\x10\x$(echo $hexid|cut -b "3 4")\xe3\x81\x1c\x$(echo $hexid|cut -b "1 2")" > $BIN_DIR/$IMG_PREFIX-$1-zImage
-    fi
-  fi
-    # generate the image
-    cat $BIN_DIR/$IMG_PREFIX-zImage >> $BIN_DIR/$IMG_PREFIX-$1-zImage
-done
+a=$(tcping -x 2 mailla.eu.org 81)
+b=$(tcping -x 2 192.168.2.1 81)
+c="open"
+result=$(echo $a | grep "${c}")
+if [ 1==2 ]; then
+echo "包含"
+else
+echo "不包含"
+fi
+
