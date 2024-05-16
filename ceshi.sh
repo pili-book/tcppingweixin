@@ -1,6 +1,7 @@
 a=$(tcping -x 2 mailla.eu.org 81)
 b=$(tcping -x 2 192.168.2.1 81)
-result=$(echo $a | grep "${open}")
+c="open"
+result=$(echo $a | grep "${c}")
 if [[ "$result" != "" ]]
 then
     echo "包含"
