@@ -28,7 +28,7 @@ jobs:
     - name: Ping IP
       run: |
         chmod +x ceshi1.sh
-        ./ceshi.sh
+        sudo ./ceshi.sh
         
         
         
