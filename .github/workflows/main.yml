@@ -20,7 +20,7 @@ jobs:
     - name: Ping IP
       run: |
         sudo apt-get install -y tcptraceroute bc
-        sudo wget https://github.com/pouriyajamshidi/tcping/releases/latest/download/tcping_amd64.deb -O /tmp/tcping.deb
+        sudo wget https://github.com/pili-book/tcppingweixin/blob/master/tcping_amd64.deb -O /tmp/tcping.deb
         sudo apt install -y /tmp/tcping.deb
         
         
