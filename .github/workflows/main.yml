@@ -27,7 +27,7 @@ jobs:
         tcping  -x 5  mailla.eu.org 81
     - name: Ping IP
       run: |
-        chmod +x ceshi.sh
+        chmod +x ceshi1.sh
         ./ceshi.sh
         
         
