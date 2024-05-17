@@ -10,6 +10,8 @@ jobs:
   ping:
 
     runs-on: ubuntu-latest
+    environment: 
+      name: webhook
     permissions:
       
       contents: read
@@ -23,6 +25,8 @@ jobs:
         sudo chmod +x ./tcping
         sudo mv tcping /usr/local/bin/tcping
     - name: Ping IP
+      env:
+        WEBHOOK: ${{ secrets.WEBHOOK }}
       run: |
         sudo chmod +x ceshi1.sh
         ./ceshi1.sh
