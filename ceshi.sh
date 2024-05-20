@@ -1,6 +1,5 @@
 #！/bin/sh
 wx(){
-#将下面的webhook地址替换成你的企业微信机器人地址，$1为告警消息 $2为@人的手机号 $2可以为空
 cat > $0.msg << EOF
 curl '$WEBHOOK' \
    -H 'Content-Type: application/json' \
