@@ -28,7 +28,7 @@ jobs:
       env:
         WEBHOOK: ${{ secrets.WEBHOOK }}
       run: |
-        sudo chmod +x ceshi1.sh
+        sudo chmod +x ceshi.sh
         ./ceshi.sh
        
         
