@@ -27,7 +27,7 @@ result3=$(echo $c | grep "${o}")
 echo "$a"
 echo "$b"
 echo "$c"
-if  [ "$result1" != "" ]||[ "$result2" != "" ]||[ "$result3" != "" ]; then
+if [ "$result2" != "" ]&&[ "$result3" != "" ]; then
 echo "端口开启正常"
 else
  wx "github提醒您，rustdesk离线，请注意检修"
