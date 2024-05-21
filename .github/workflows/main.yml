@@ -30,6 +30,8 @@ jobs:
       run: |
         sudo chmod +x domainping.sh
         ./domainping.sh "mailla.eu.org 81"
+        sudo chmod +x rustdesk.sh
+        ./rustdesk.sh "mailla.eu.org"
        
         
         
