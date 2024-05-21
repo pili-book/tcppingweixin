@@ -24,7 +24,9 @@ jobs:
         sudo apt-get install -y tcptraceroute bc
         sudo chmod +x ./tcping
         sudo mv tcping /usr/local/bin/tcping
-        curl -s mailla.eu.org:21115
+        sudo apt-get update
+        sudo apt-get install -y netcat
+        nc -zv mailla.eu.org 21115
     - name: Ping IP
       env:
         WEBHOOK: ${{ secrets.WEBHOOK }}
