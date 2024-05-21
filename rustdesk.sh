@@ -15,19 +15,20 @@ EOF
 sh $0.msg && rm -rf $0.msg
 }
 echo "$1"
-a=$(tcping -x 2 "$1")
-b=$(tcping -x 2 192.168.2.1 81)
-c="open"
-result=$(echo $a | grep "${c}")
-if [ "$result" != "" ]; then
+a=$(tcping -x 2 "$1" 2115)
+b=$(tcping -x 2 "$1" 2116)
+c=$(tcping -x 2 "$1" 2117)
+
+e=$(tcping -x 2 192.168.2.1 81)
+o="open"
+result1=$(echo $a | grep "${o}")
+result2=$(echo $b | grep "${o}")
+result3=$(echo $c | grep "${o}")
 echo "$a"
+echo "$b"
+echo "$c"
+if  [ "$result1" != "" ]||[ "$result2" != "" ]||[ "$result3" != "" ]; then
+echo "端口开启正常"
 else
-sleep 600
-d=$(tcping -x 5 "$1")
-result=$(echo $d | grep "${c}")
- if [ "$result" != "" ]; then
- echo "包含"
- else
- wx "github提醒您，位于王村北街的路由器断线了。。。注意注意。。赶快让这家伙干活了"
- fi
+ wx "github提醒您，rustdesk离线，请注意检修"
 fi
