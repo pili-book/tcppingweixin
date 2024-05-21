@@ -15,9 +15,9 @@ EOF
 sh $0.msg && rm -rf $0.msg
 }
 echo "$1"
-a=$(tcping -x 10 "$1" 21115)
-b=$(tcping -x 10 "$1" 21116)
-c=$(tcping -x 10 "$1" 21117)
+a=$(tcping -x 3 "$1" 21115)
+b=$(tcping -x 3 "$1" 21116)
+c=$(tcping -x 3 "$1" 21117)
 
 e=$(tcping -x 2 192.168.2.1 81)
 o="open"
