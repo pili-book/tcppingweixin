@@ -24,7 +24,7 @@ jobs:
         sudo apt-get install -y tcptraceroute bc
         sudo chmod +x ./tcping
         sudo mv tcping /usr/local/bin/tcping
-        tcping -x 2 yiyeshu.lgbt.sh 81
+       
         
     - name: Ping IP
       env:
